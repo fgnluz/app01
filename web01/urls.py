@@ -10,4 +10,6 @@ url(r'^$', 'home', name='home'),
 url(r'^cadastro/$', Criar.as_view(), name='cadastro'),
 url(r'^lista/$', Lista.as_view(), name='lista'),
 url(r'^admin/', include(admin.site.urls)),
+url(r'^despesas/$', CriarDespesa.as_view(), name='despesas'),
+url(r'^listadespesas/$', ListaDespesas.as_view(), name='listadespesas'),
 )

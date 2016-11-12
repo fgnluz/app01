@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+        <h1>Lista de Despesas</h1>
+
+                <table>
+                        <tr>
+                                <th>Despesa</th>
+                                <th>Valor</th>
+                                <th>Criado em</th>
+                        </tr>
+
+                {% for item in object_list %}
+                
+                       <tr>
+                                <td>{{ item.despesa }}</td>
+                                <td>{{ item.valor }}</td>                               
+                                <td>{{ item.criado_em|date:"d/m/Y" }}</td>
+                        </tr>
+            
+                {% empty %}
+
+                        <li>Sem itens na lista.</li>
+                
+                {% endfor %}
+                
+                </table>
+
+{% endblock content %}
